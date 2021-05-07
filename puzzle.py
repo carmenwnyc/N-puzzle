@@ -131,11 +131,8 @@ class PuzzleState(object):
             child.depth = self.depth + 1
         return self.children
 
-# Function that Writes to output.txt
-
-### Students need to change the method to have the corresponding parameters
+### Function that Writes to output.txt
 def writeOutput(goal_state : PuzzleState, search_depth : int, max_depth : int, nodes_expand : int):
-    ### Student Code Goes here
     path = []
     path = getPath(path, goal_state)
     print("path_to_goal: ", path, file=open("output.txt", "a"))
@@ -143,22 +140,8 @@ def writeOutput(goal_state : PuzzleState, search_depth : int, max_depth : int, n
     print("nodes_expanded: ", nodes_expand,file=open("output.txt", "a"))
     print("search_depth: ", search_depth,file=open("output.txt", "a"))
     print("max_search_depth: ", max_depth,file=open("output.txt", "a"))
-    
-### Helper method to return the path given the goal state
-### by Carmen Wu
-# def getPath(path : list, state: PuzzleState) -> list:
-#     if state.action == "Initial":
-#         final_path = path[::-1]
-#         print("after reversing final path", file=open("output.txt", "a"))
-#         return final_path
-#     else:
-#         path.append(state.action)
-#         print("appended action: ", state.action, file=open("output.txt", "a"))
-#         return getPath(path, state.parent) 
-#         #do not need to check if parent is None or not. Because state.action != "Initial"
 
 ### Helper method to return the path given the goal state
-### by Carmen Wu
 def getPath(path : list, state: PuzzleState) -> list:
     while state.action != "Initial":
         path.append(state.action)
@@ -167,7 +150,6 @@ def getPath(path : list, state: PuzzleState) -> list:
 
 def bfs_search(initial_state : PuzzleState):
     """BFS search"""
-    ### STUDENT CODE GOES HERE ###
     search_depth = initial_state.depth
     max_depth = 0
     nodes_expand = 0
@@ -203,7 +185,6 @@ def bfs_search(initial_state : PuzzleState):
 
 def dfs_search(initial_state : PuzzleState):
     """DFS search"""
-    ### STUDENT CODE GOES HERE ###
     search_depth = initial_state.depth
     max_depth = 0
     nodes_expand = 0
