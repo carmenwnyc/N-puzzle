@@ -1,6 +1,5 @@
 ### N-puzzle game
 ### Author: Carmen Wu
-### UNI: jw3513
 
 from __future__ import division
 from __future__ import print_function
